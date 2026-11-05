@@ -1,0 +1,10 @@
+# Extra baseline dependencies observed locally; install after requirements.txt.
+einops==0.8.2
+rtdl==0.0.13
+libzero==0.0.8
+icecream==2.2.0
+tomli==2.2.1
+tomli-w==1.2.0
+category-encoders==2.9.0
+catboost==1.2.10
+skorch==1.4.0

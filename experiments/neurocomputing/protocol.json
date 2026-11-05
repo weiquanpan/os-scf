@@ -1,0 +1,20 @@
+{
+  "version": "nc-v1",
+  "datasets": ["lendingclub", "bikesharing", "taxi"],
+  "split_seeds": [3101, 3102, 3103],
+  "training_seeds": [101, 102, 103, 104, 105],
+  "selection_seeds": [91, 92],
+  "sizes": {"lendingclub": [20000, 5000, 5000], "bikesharing": [9000, 1903, 3000], "taxi": [20000, 5000, 5000]},
+  "flow": {"alphas": [0.0, 0.5, 1.0], "step_multipliers": [0.5, 1.0, 2.0], "base_steps": {"lendingclub": 1600, "bikesharing": 1200, "taxi": 1600}, "sample_steps": 80, "width": 128, "lr": 0.001},
+  "tabsyn": {"vae_max_epochs": 1000, "diffusion_max_epochs": 2000, "vae_min_epochs": 80, "diffusion_min_epochs": 160, "vae_patience": 150, "diffusion_patience": 300, "check_every": 50, "batch_size": 4096, "diffusion_width": 1024, "sample_steps": 50, "lr": 0.001},
+  "tabddpm": {"candidate_steps": [3000, 10000], "timesteps": 100},
+  "metrics": {"projections": 128, "full_projection_seed": 17, "free_projection_seed": 19, "dependent_projection_seed": 23},
+  "notes": [
+    "Previously studied LendingClub/BikeSharing pools: repeated splits, not pristine external validation.",
+    "Shared flow alpha/steps selected by mean validation full SW of hard and direct+reconstruction, averaged over selection seeds.",
+    "TabSyn uses upstream model components, quantile normalization, width1024 and schedulers; capped validation early-stopping adapter, not an exact official-recipe reproduction.",
+    "TabSyn validation checkpoint selection occurs per run. Budget caps are fixed before final test access; cap-limited runs are explicitly flagged.",
+    "No test-driven budget expansion. Seed variation within each split and variation between overlapping random splits are reported separately.",
+    "Timing is synchronized but may include other desktop GPU activity; no exclusive-device speed claim."
+  ]
+}

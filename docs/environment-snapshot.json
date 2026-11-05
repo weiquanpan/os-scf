@@ -1,0 +1,16 @@
+{
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "torch": "2.9.1+cu128",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.6",
+    "pyarrow": "21.0.0",
+    "tqdm": "4.67.1",
+    "psutil": "7.0.0",
+    "POT": "0.9.6.post1"
+  },
+  "note": "Observed local environment; not a portable dependency lock."
+}

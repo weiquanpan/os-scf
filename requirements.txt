@@ -1,0 +1,12 @@
+# Versions observed in the source workspace; Python 3.13 was used for validation.
+# Install an appropriate PyTorch CUDA build separately if GPU execution is needed.
+numpy==2.3.5
+pandas==2.3.3
+torch==2.9.1
+scipy==1.16.3
+scikit-learn==1.7.2
+matplotlib==3.10.6
+pyarrow==21.0.0
+tqdm==4.67.1
+psutil==7.0.0
+POT==0.9.6.post1
